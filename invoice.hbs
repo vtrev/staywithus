@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>staywithus</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    {{!-- <style>
-        td{
-            font-size: 11px;
-        }
-    </style> --}}
+    <style>
+        .total td{
+            font-weight: 600;
+            font-size: 20px;
+            }
+
+    </style>
 </head>
 
 <body>
@@ -17,47 +19,50 @@
     <br>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <img src="./logo.png" style="width:100%; max-width:300px;">
+            <div class="col l12">
+                <img src="https://raw.githubusercontent.com/vtrev/staywithus/gh-pages/logo.png"
+                    style="width:100%; max-width:300px;">
             </div>
         </div>
-
         <div class="row">
-            <div class="col right l7">
-                <p>
-                    Date : {{dateCreated}} <br>
-                    To {{name}} <br>
-                    {{!-- Due : {{dueDate}} <br> --}}
-                    {{!-- Email : {{email}} --}}
-                    Supplied By : {{ suppliedBy}}
-                    For :  {{for}}
-
-                </p>
+            <div class="col l12 s12 m12">
+            <table>
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name </td>
+                        <td>{{name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date </td>
+                        <td>{{date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Supplied By</td>
+                        <td>{{suppliedBy}}</td>
+                    </tr>
+                    <tr>
+                        <td>For </td>
+                        <td>{{{suppliedTo}}}</td>
+                    </tr>
+                    <tr class="total">
+                        <td>Total</td>
+                        <td>{{total}}</td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
         </div>
-        {{!-- <div class="row">
-            <div class="col s12 l12 m12">
-                <table>
-                    <tr>
-                        <th>Item</th>
-                        <th>QTY</th>
-                        <th>Price (R)</th>
-                    </tr>
-                    {{#each items}}
-                    <tr> 
-                        <td>{{this.name}}</td>
-                        <td>{{this.qty}}</td>
-                        <td>{{this.price}}</td>
-                    </tr>
-                    {{/each}}
-                    <tr>
-                        <td><h5>Total</h5></td>
-                        <td></td>
-                        <td><h5>R{{total}}</h5></td>
-                    </tr>
-                </table>
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <img src="./images/sign.png" alt="signature">
+                <br>
+                <p>Signed : {{dateSigned}}</p>
             </div>
-        </div> --}}
+            
+
+        </div>
     </div>
 </body>
 

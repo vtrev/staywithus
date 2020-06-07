@@ -14,6 +14,7 @@ app.post('/invoice', (req, res) => {
     let current_datetime = new Date();
     let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
     let data = {
+        dateSigned : formatted_date,
         name : req.body.name,
         suppliedBy : req.body.suppliedBy,
         suppliedTo : req.body.suppliedTo.replace(/\n/g ,"<br/>"),
