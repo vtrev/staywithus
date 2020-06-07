@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humbes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col l12 left">
+               <img src="./logo.png" alt="">
+            </div>
+        </div>
+        <div class="row center">
+            <div class="col s12 m12 l4">
+                <div action="" method="" enctype='application/json'>
+                    <p>Name</p>
+                    <input v-model="name" name="name" type="text" placeholder="E.g Orilwela Mulondo">
+                    <p>Date</p>
+                    <input v-model="date" name="date" type="text" placeholder="">
+                    <p>Supplied By</p>
+                    <input v-model="suppliedBy" name="suppliedBy" type="text" placeholder="">
+                    <p>For</p>
+                    <textarea v-model="suppliedTo" name="suppliedTo" type="text" placeholder=""></textarea>
+                    <p>Sub Total</p>
+                    <input v-model="total" name="total" type="number" placeholder="">
+                    <br>
+                    <button class="btn" v-on:click="sendInvoice">Submit</button>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
