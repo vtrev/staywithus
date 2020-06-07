@@ -10,6 +10,7 @@ app.use('/', express.static(__dirname + '/public'));
 
 
 app.post('/invoice', (req, res) => {
+    var fileName = '';
     const template = Handlebars.compile(fs.readFileSync('./invoice.hbs', 'utf8'));
     let current_datetime = new Date();
     let formatted_date = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds()
@@ -27,14 +28,14 @@ app.post('/invoice', (req, res) => {
         format: 'Letter'
     };
 
-
-    pdf.create(templatedHTML, options).toFile('./out/invoice.pdf', function (err, res) {
+    pdf.create(templatedHTML, options).toFile('./out/invoice.pdf', function (err, resp) {
         if (err) return console.log(err);
-        console.log(res); 
+        fileName =  resp.filename;
+        var invoicePdf = fs.readFileSync(fileName);
+        res.contentType("application/pdf");
+        res.send(invoicePdf);
+    })    
     });
-    res.end();
-})
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
