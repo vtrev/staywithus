@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "handlebars": "^4.7.6",
     "nodemon": "^2.0.4",
-    "html-pdf": "^2.2.0"
+    "html-pdf": "^3.0.1"
   },
   "engines": {
     "node": "12.18"
